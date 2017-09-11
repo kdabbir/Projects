@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVC_EmojiAPI.Models.Images>
+
+@using GridMvc.Html
+@using MVC_EmojiAPI.App_Start
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+    <title>Index</title>
+</head>
+<body>
+    <h1>Please find below gridImages!</h1>
+    <hr />
+    <div style="width:500px;">
+        @Html.Grid(Model).Columns(columns =>
+   {
+       columns.Add(c => c.URL)
+              .Encoded(false)
+               .Sanitized(false)
+               .SetWidth(30)
+               .RenderValueAs(o => Html.ImageActionLink("Link Display Text",
+       "", "", null, null, o.URL));
+
+       //    columns.Add(
+       //    Html.Raw(string.Format("<text><img src=\"{0}\" alt=\"Image\"/></text>", c=>c.URL)));
+   }).WithPaging(100).Sortable(true)
+    </div>
+</body>
+</html>
