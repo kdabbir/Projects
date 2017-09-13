@@ -1,5 +1,6 @@
-MVC_EmojiAPI
-Simple MVC based web application which should do following items
+Simple MVC based web application which is focused on User-Authentication & calling GitHub API to load emojis.
+
+It does the following items
 
 1)	First page is the Login Page. The user can only access other pages once he logs in.  The system should be able to log in the following 2 users
 a.	Username : user1
