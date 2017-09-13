@@ -1,4 +1,3 @@
-# Projects
 MVC_EmojiAPI
 Simple MVC based web application which should do following items
 
